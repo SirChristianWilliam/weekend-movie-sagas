@@ -26,6 +26,11 @@ const movies = (state = [], action) => {
     }
 }
 
+const activeMovie = (state={}, action) => {
+
+    return state;
+}
+
 // Used to store the movie genres
 const genres = (state = [], action) => {
     switch (action.type) {
@@ -58,6 +63,8 @@ function* fetchSingleMovie(action){
 
     console.log('response from server is:', response);
 
+    //'yield put' to 
+
 
 
 }
@@ -77,6 +84,7 @@ const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
+        activeMovie,
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),

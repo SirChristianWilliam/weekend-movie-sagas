@@ -26,11 +26,9 @@ router.get('/:id', (req, res)=>{
     //POOL TO DB
     pool.query(queryText, [req.params.id])
         .then(result => {
-            console.log('single move after get:', result.rows);
-            //send movie back to saga
-            res.send(result.rows);
-            //send status of 201 - created
-            res.sendStatus(201);
+            // console.log('single move after get:', result.rows);
+            //send movie back to saga as object
+            res.send(result.rows[0]);
         })
         .catch(err=>{
             console.error('in /GET single movie error:', err);
