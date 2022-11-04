@@ -9,12 +9,14 @@ function Details(){
     const dispatch = useDispatch();
     const params = useParams();
     
-    // useEffect(()=>{
-    //     axios({
-    //         method: 'GET',
-    //         url: '/'
-    //     })
-    // })
+    console.log('params.id', params.id);
+    useEffect(()=>{
+        //send id to saga
+        dispatch({
+            type: 'FETCH_SINGLE_MOVIE',
+            payload: params.id
+        });
+    }, []);
 
 
      return(
