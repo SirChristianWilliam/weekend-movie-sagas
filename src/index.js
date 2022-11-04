@@ -80,7 +80,7 @@ function * fetchSingleMovieGenres(action){
 
     // //get genres for the movie from genreRouter
     const response = axios.get(`/api/genre/${action.payload}`)
-    console.log('response from server for singlemoviegenres:', response.data);
+    console.log('response from server for singlemoviegenres:', response);
 
 }
 

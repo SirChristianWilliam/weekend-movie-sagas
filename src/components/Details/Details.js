@@ -20,20 +20,19 @@ function Details(){
             payload: params.id
         });
 
-        dispatch({
-            type: 'FETCH_MOVIE_GENRES',
-            payload: params.id,
-        })
+        // dispatch({
+        //     type: 'FETCH_MOVIE_GENRES',
+        //     payload: params.id,
+        // })
     }, [params.id]);
 
     //return loading 
-    if (!activeMovie.id){
-        return <h1>loading...</h1>
-    }
+    // if (!activeMovie){
+    //     console.log('activeMovie', activeMovie)
+    //     return <h1>loading...</h1>
+    // }
 
-    if (activeMovie.id){
-        
-    }
+
     // else {
     //     return <h1>{activeMovie.title}</h1>
     // }
