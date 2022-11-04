@@ -75,7 +75,7 @@ function* fetchSingleMovie(action){
     });
 }
 
-function * fetchSingleMovieGenres(action){
+function* fetchSingleMovieGenres(action){
     console.log('in fetchSingleMovieGenres and id is:', action.payload);
 
     // //get genres for the movie from genreRouter
@@ -86,6 +86,12 @@ function * fetchSingleMovieGenres(action){
         payload: response.data
     })
 }
+
+// function* emptyStore(){
+//     yield put({
+//         type: 'EMPTY_STORE'
+//     })
+// }
 
 
 // Create the rootSaga generator function
@@ -98,6 +104,9 @@ function* rootSaga() {
 
     //fetch genre for singlemovie
     yield takeEvery('FETCH_MOVIE_GENRES', fetchSingleMovieGenres);
+
+    //empty store
+    // yield takeEvery('EMPTY_STORE', emptyStore);
     
 }
 
