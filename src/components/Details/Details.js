@@ -9,6 +9,9 @@ function Details(){
     const dispatch = useDispatch();
     const params = useParams();
     
+    //get active movie from redux
+    const activeMovie = useSelector(store => store.activeMovie);
+
     console.log('params.id', params.id);
     useEffect(()=>{
         //send id to saga
@@ -18,12 +21,19 @@ function Details(){
         });
     }, []);
 
+    //return loading 
+    if (!activeMovie.id){
+        return <h1>loading...</h1>
+    }
+    // else {
+    //     return <h1>{activeMovie.title}</h1>
+    // }
 
      return(
-        <article className="movieDetailContainer">
-            <h1> MOVIE TITLE </h1>
-            <img src="https://s.yimg.com/uu/api/res/1.2/0GBXd289dMqVEPaqTl4x5w--~B/aD0xNTAwO3c9MTAzNTthcHBpZD15dGFjaHlvbg--/http://media.zenfs.com/en/homerun/feed_manager_auto_publish_494/d05a3f087fa57f6d41b865d53a42a5f5"></img>
-            <p>MOVIE DESCRIPTION</p>
+        <article key={activeMovie.id} className="movieDetailContainer">
+            <h1> {activeMovie.title} </h1>
+            <img src={activeMovie.poster}></img>
+            <p>{activeMovie.description}</p>
             <ul>
                 <li>Space Movie</li>
                 <li>Action</li>

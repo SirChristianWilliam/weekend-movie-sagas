@@ -27,7 +27,12 @@ const movies = (state = [], action) => {
 }
 
 const activeMovie = (state={}, action) => {
-
+    console.log('active movie payload:', action.payload);
+    //set state of active book
+    switch(action.type){
+        case 'SET_ACTIVE_BOOK':
+            return action.payload;
+    }
     return state;
 }
 
@@ -63,9 +68,11 @@ function* fetchSingleMovie(action){
 
     console.log('response from server is:', response);
 
-    //'yield put' to 
-
-
+    //'yield put' to activeMovie
+    yield put({
+        type: 'SET_ACTIVE_BOOK',
+        payload: response.data
+    });
 
 }
 
