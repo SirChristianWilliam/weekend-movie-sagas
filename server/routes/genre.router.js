@@ -5,7 +5,7 @@ const pool = require('../modules/pool')
 router.get('/:id', (req, res) => {
 console.log('in get genres by id and id is:', req.params);
 
-    //set querytext for query
+    //set querytext for query to DB
     const queryText = `
             SELECT "genres"."name" FROM "movies"
             JOIN "movies_genres"
@@ -19,6 +19,7 @@ console.log('in get genres by id and id is:', req.params);
     pool.query(queryText, [req.params.id])
         .then(result=>{
             console.log('result.rows:', result.rows);
+            //send results
             res.send(result.rows);
         })
         .catch(err=>{

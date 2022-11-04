@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool')
 
 router.get('/', (req, res) => {
-
+                // select all movies to render
   const query = `SELECT * FROM movies ORDER BY "title" ASC`;
   pool.query(query)
     .then( result => {
@@ -17,13 +17,13 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res)=>{
     // console.log('in movie /:id GET and id is:', req.params);
-    //set query with $
+    //set query with $1 - no johnny drop tables
     const queryText = `
         SELECT * FROM "movies"
         WHERE "id" = $1;
     `;
 
-    //POOL TO DB
+    //POOL TO DB            id ⬇️
     pool.query(queryText, [req.params.id])
         .then(result => {
             // console.log('single move after get:', result.rows);
@@ -32,7 +32,7 @@ router.get('/:id', (req, res)=>{
         })
         .catch(err=>{
             console.error('in /GET single movie error:', err);
-            //send server error on error
+            //send server error
             res.sendStatus(500);
         })
     

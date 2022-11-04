@@ -8,14 +8,14 @@ function App() {
     <div className="App">
       <h1>The Movies Saga!</h1>
       <Router>        
+        {/* home */}
         <Route path="/" exact>
           <MovieList />
         </Route>
-     
+        {/* path to details page including id for params to be pulled for requests */}
         <Route path="/api/movie/:id">
           <Details />
         </Route>
-
         {/* Add Movie page */}
       </Router>
     </div>

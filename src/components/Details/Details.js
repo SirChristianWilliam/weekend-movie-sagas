@@ -21,18 +21,19 @@ function Details(){
     // console.log('params.id', params.id);
     useEffect(()=>{
         //send id to saga
+        //get the selected movie! ⬇️
         dispatch({
             type: 'FETCH_SINGLE_MOVIE',
             payload: params.id
         });
-
+        //dispatch to saga to get the genres for each movie ⬇️
         dispatch({
             type: 'FETCH_MOVIE_GENRES',
             payload: params.id,
         });
     }, [params.id]);
 
-    // return loading 
+    // return loading if no active movie
     if (!activeMovie.id){
         console.log('activeMovie', activeMovie)
         return <h1>loading...</h1>
@@ -55,7 +56,8 @@ function Details(){
             <h1> {activeMovie.title} </h1>
             <img src={activeMovie.poster}></img>
             <p>{activeMovie.description}</p>
-            <ul>
+            <ul>    
+                {/* if movie genres true map and render all genres */}
                 {movieGenres && movieGenres.map((genre, i) => {
                     return <li key={i}>{genre.name}</li>
                 })}
