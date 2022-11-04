@@ -2,13 +2,16 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { useHistory } from 'react-router-dom';
 
 function Details(){
     //import useParams and dispatch
     const dispatch = useDispatch();
     const params = useParams();
     
+    //useHistory setup
+    const history=useHistory();
+
     //get active movie from redux
     const activeMovie = useSelector(store => store.activeMovie);
 
@@ -35,12 +38,19 @@ function Details(){
         return <h1>loading...</h1>
     }
 
-   
-    // else {
-    //     return <h1>{activeMovie.title}</h1>
-    // }
+    const goHome = () => {
+        console.log('in goHome fn');
 
-     return(
+        //empty redux store
+        // dispatch({
+        //     type: 'EMPTY_STORE',
+        // });
+
+        //go home
+        history.push('/');
+    };
+
+    return(
         <article key={activeMovie.id} className="movieDetailContainer">
             <h1> {activeMovie.title} </h1>
             <img src={activeMovie.poster}></img>
@@ -51,8 +61,10 @@ function Details(){
                 })}
             </ul>
 
+            <button onClick={goHome} class="backBtn">Home</button>
+
         </article>
-     )
+    )
 };
 
 
