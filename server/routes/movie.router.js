@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res)=>{
-    console.log('in movie /:id GET and id is:', req.params);
+    // console.log('in movie /:id GET and id is:', req.params);
     //set query with $
     const queryText = `
         SELECT * FROM "movies"
@@ -24,6 +24,17 @@ router.get('/:id', (req, res)=>{
     `;
 
     //POOL TO DB
+    pool.query(queryText, [req.params.id])
+        .then(result => {
+            // console.log('single move after get:', result.rows);
+            //send movie back to saga as object
+            res.send(result.rows[0]);
+        })
+        .catch(err=>{
+            console.error('in /GET single movie error:', err);
+            //send server error on error
+            res.sendStatus(500);
+        })
     
 })
 
