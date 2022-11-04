@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res)=>{
-    console.log('in movie /:id GET and id is:', req.params);
+    // console.log('in movie /:id GET and id is:', req.params);
     //set query with $
     const queryText = `
         SELECT * FROM "movies"

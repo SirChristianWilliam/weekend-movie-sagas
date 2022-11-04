@@ -12,18 +12,27 @@ function Details(){
     //get active movie from redux
     const activeMovie = useSelector(store => store.activeMovie);
 
-    console.log('params.id', params.id);
+    // console.log('params.id', params.id);
     useEffect(()=>{
         //send id to saga
         dispatch({
             type: 'FETCH_SINGLE_MOVIE',
             payload: params.id
         });
-    }, []);
+
+        dispatch({
+            type: 'FETCH_MOVIE_GENRES',
+            payload: params.id,
+        })
+    }, [params.id]);
 
     //return loading 
     if (!activeMovie.id){
         return <h1>loading...</h1>
+    }
+
+    if (activeMovie.id){
+        
     }
     // else {
     //     return <h1>{activeMovie.title}</h1>
