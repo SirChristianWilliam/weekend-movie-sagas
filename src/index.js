@@ -39,7 +39,7 @@ const activeMovie = (state={}, action) => {
 // Used to store the movie genres
 const genres = (state = [], action) => {
     switch (action.type) {
-        case 'SET_GENRES':
+        case 'SET_GENRE':
             return action.payload;
         default:
             return state;
@@ -52,7 +52,7 @@ function* fetchAllMovies() {
     // get all movies from the DB
     try {
         const movies = yield axios.get('/api/movie');
-        // console.log('get all:', movies.data);
+        console.log('get all:', movies.data);
         yield put({ type: 'SET_MOVIES', payload: movies.data });
 
     } catch {
@@ -66,7 +66,7 @@ function* fetchSingleMovie(action){
     //get single move and assign to response variable
     const response = yield axios.get(`/api/movie/${action.payload}`);
 
-    // console.log('response from server is:', response);
+    console.log('Single move response from server is:', response.data);
 
     //'yield put' to activeMovie
     yield put({
@@ -79,9 +79,12 @@ function * fetchSingleMovieGenres(action){
     console.log('in fetchSingleMovieGenres and id is:', action.payload);
 
     // //get genres for the movie from genreRouter
-    const response = axios.get(`/api/genre/${action.payload}`)
-    console.log('response from server for singlemoviegenres:', response);
-
+    const response = yield axios.get(`/api/genre/${action.payload}`);
+    console.log('response from server for singlemoviegenres:', response.data);
+    // yield put({
+    //     type: 'SET_GENRE',
+    //     payload: response.data
+    // })
 }
 
 

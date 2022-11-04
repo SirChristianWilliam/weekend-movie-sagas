@@ -11,7 +11,7 @@ function Details(){
     
     //get active movie from redux
     const activeMovie = useSelector(store => store.activeMovie);
-
+    // const genres = useSelector(store => store.genres);
     // console.log('params.id', params.id);
     useEffect(()=>{
         //send id to saga
@@ -20,19 +20,25 @@ function Details(){
             payload: params.id
         });
 
-        // dispatch({
-        //     type: 'FETCH_MOVIE_GENRES',
-        //     payload: params.id,
-        // })
+        dispatch({
+            type: 'FETCH_MOVIE_GENRES',
+            payload: params.id,
+        });
     }, [params.id]);
 
-    //return loading 
-    // if (!activeMovie){
-    //     console.log('activeMovie', activeMovie)
-    //     return <h1>loading...</h1>
-    // }
+    // return loading 
+    if (!activeMovie.id){
+        console.log('activeMovie', activeMovie)
+        return <h1>loading...</h1>
+    }
+    // if (activeMovie.id){
+    //     dispatch({
+    //         type: 'FETCH_MOVIE_GENRES',
+    //         payload: params.id,
+    //     });
+    // };
 
-
+   
     // else {
     //     return <h1>{activeMovie.title}</h1>
     // }

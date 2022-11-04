@@ -18,13 +18,11 @@ console.log('in get genres by id and id is:', req.params);
     //pool to db and get array of genre objects
     pool.query(queryText, [req.params.id])
         .then(result=>{
-            console.log('genre array after db query', result.rows);
-            // //send response back to saga
+            console.log('result.rows:', result.rows);
             res.send(result.rows);
-            // res.sendStatus(201);
         })
-        .catch(err => {
-            console.error('in get genres error', err);
+        .catch(err=>{
+            console.error('in get genre err', err);
             res.sendStatus(500);
         })
 
