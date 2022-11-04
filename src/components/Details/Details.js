@@ -46,8 +46,8 @@ function Details(){
             <img src={activeMovie.poster}></img>
             <p>{activeMovie.description}</p>
             <ul>
-                {movieGenres && movieGenres.map(genre => {
-                    return <li>{genre.name}</li>
+                {movieGenres && movieGenres.map((genre, i) => {
+                    return <li key={i}>{genre.name}</li>
                 })}
             </ul>
 
