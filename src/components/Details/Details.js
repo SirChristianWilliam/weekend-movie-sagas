@@ -1,4 +1,21 @@
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+
+
 function Details(){
+    //import useParams and dispatch
+    const dispatch = useDispatch();
+    const params = useParams();
+    
+    // useEffect(()=>{
+    //     axios({
+    //         method: 'GET',
+    //         url: '/'
+    //     })
+    // })
+
 
      return(
         <article className="movieDetailContainer">

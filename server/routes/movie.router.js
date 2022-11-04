@@ -13,8 +13,19 @@ router.get('/', (req, res) => {
       console.log('ERROR: Get all movies', err);
       res.sendStatus(500)
     })
-
 });
+
+router.get('/:id', (req, res)=>{
+    console.log('in movie /:id GET and id is:', req.params);
+    //set query with $
+    const queryText = `
+        SELECT * FROM "movies"
+        WHERE "id" = $1;
+    `;
+
+    //POOL TO DB
+    
+})
 
 router.post('/', (req, res) => {
   console.log(req.body);

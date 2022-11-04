@@ -4,8 +4,10 @@ import './MovieList.css'
 import { useHistory } from 'react-router-dom';
 
 function MovieList() {
+    //import useHistory
+    const history = useHistory();
 
-    
+    //use dispatc and useselcotor for store of movies post dispatch below
     const dispatch = useDispatch();
     const movies = useSelector(store => store.movies);
 
@@ -13,8 +15,14 @@ function MovieList() {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
+    //on click
     const onSelect = (evt)=>{
         console.log('evt.target.id', evt.target.id);
+
+        
+
+        //go to details and send id with
+        history.push(`/api/movie/${evt.target.id}`);
 
     }
 
