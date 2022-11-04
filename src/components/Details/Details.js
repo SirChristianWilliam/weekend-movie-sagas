@@ -11,6 +11,9 @@ function Details(){
     
     //get active movie from redux
     const activeMovie = useSelector(store => store.activeMovie);
+
+    //get movies genres from redux
+    const movieGenres = useSelector(store => store.genres);
     // const genres = useSelector(store => store.genres);
     // console.log('params.id', params.id);
     useEffect(()=>{
@@ -31,12 +34,6 @@ function Details(){
         console.log('activeMovie', activeMovie)
         return <h1>loading...</h1>
     }
-    // if (activeMovie.id){
-    //     dispatch({
-    //         type: 'FETCH_MOVIE_GENRES',
-    //         payload: params.id,
-    //     });
-    // };
 
    
     // else {
@@ -49,8 +46,9 @@ function Details(){
             <img src={activeMovie.poster}></img>
             <p>{activeMovie.description}</p>
             <ul>
-                <li>Space Movie</li>
-                <li>Action</li>
+                {movieGenres && movieGenres.map(genre => {
+                    return <li>{genre.name}</li>
+                })}
             </ul>
 
         </article>
