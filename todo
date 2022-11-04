@@ -1,14 +1,19 @@
 
 
 features
-     [ X] Onclick at each move go to details page for that movie
-          [ X] include movie poster - located in movies table
-          [ X] include movie information - located in movies table
-          [ X] include all genres - names in genres and info for which ones in movies_genres
-          [ ] include a 'back to list' button to return to movie list
+     [X] Onclick at each move go to details page for that movie
+          [X] include movie poster - located in movies table
+          [X] include movie information - located in movies table
+          [X] include all genres - names in genres and info for which ones in movies_genres
+          [X] include a 'back to list' button to return to movie list
 
 requirements
-     [ ] Use SAGA and REDUX
-     [ ] Use params for details page
+     [X] Use SAGA and REDUX
+     [X] Use params for details page
+
      [ ] Style this thing
+        [ ] Cards from MUI
+        [ ] Grid
+        [ ] good fonts?
      [ ] Update Readme
+     [ ] Fix the genres, they dont make any sense. i.e. james bond = animated, musical lol

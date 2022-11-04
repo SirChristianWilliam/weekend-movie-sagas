@@ -61,7 +61,7 @@ function Details(){
                 })}
             </ul>
 
-            <button onClick={goHome} class="backBtn">Home</button>
+            <button onClick={goHome} class="backBtn">Back To List</button>
 
         </article>
     )

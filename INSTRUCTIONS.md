@@ -38,19 +38,24 @@ We've added some movie posters in the `public/images` folder, and the database i
 
 ## Feature List
 
-> NOTE: Start by taking inventory of the existing code. Part of the work for setting up sagas has been done for you.
+> [X]NOTE: Start by taking inventory of the existing code. Part of the work for setting up sagas has been done for you.
 
 ### Home / List Page
 
 This view is completed already! It displays all of the movies in the movie database. 
 
-- TODO: When a movie poster is clicked, a user should be brought to the `/details` view for that movie.
+[X]- TODO: When a movie poster is clicked, a user should be brought to the `/details` view for that movie.
 
 ### Details Page
 
-This should show all details **including ALL genres** for the selected movie, including title, description, and the image, too! Use Sagas and Redux to handle these requests and data.
+This should show all details 
+[X] **including ALL genres** for the selected movie, 
+[X] including title, 
+[X] description, 
+[X] and the image, too! 
+[X] Use Sagas and Redux to handle these requests and data.
 
-- TODO: The details page should have a `Back to List` button, which should bring the user to the Home/List Page
+- [X] The details page should have a `Back to List` button, which should bring the user to the Home/List Page
 
 > Base functionality does not require the movie details to load correctly after refresh of the browser.
 
