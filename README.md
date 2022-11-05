@@ -6,6 +6,8 @@ This project was completed over the course of three days. The information is pul
 
 I styled using vanilla CSS because I still need practice with it. I am getting better at layouts and controlling the responsiveness of the page. I still need to practice overall designing. I am happy with how it turned out though.
 
+I also went through the database.sql and fixed the genre assignments since they were non-sensical (ie. starwars was a musical).
+
 ### Prerequisites
 
 Link to software that is required to install the app (e.g. node).
