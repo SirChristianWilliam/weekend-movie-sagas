@@ -17,6 +17,7 @@ console.log('in get genres by id and id is:', req.params);
         ;`;
 
     //pool to db and get array of genre objects
+    //                      id ⬇️
     pool.query(queryText, [req.params.id])
         .then(result=>{
             console.log('result.rows:', result.rows);
