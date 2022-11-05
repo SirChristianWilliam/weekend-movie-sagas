@@ -12,8 +12,8 @@ requirements
      [X] Use params for details page
 
      [ ] Style this thing
-        [ ] Cards from MUI
-        [ ] Grid
+        [ ] Cards from MUI ?
+        [ ] Grid ? -maybe, not super responsive to width
         [ ] good fonts?
      [ ] Update Readme
      [ ] Fix the genres, they dont make any sense. i.e. james bond = animated, musical lol

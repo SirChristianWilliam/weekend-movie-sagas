@@ -1,0 +1,24 @@
+.movie-container {
+    margin: 2em;
+    padding: 1em;
+    display: flex;
+    align-content: stretch;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+
+    background-color: #1a1a1c;
+    color: white;
+    box-shadow: 0px 0px 17px 5px #6f2332;
+}
+
+.movie-container>img{
+    border-radius: 10px;
+}
+
+.movie-title{
+    margin: 0.25rem auto 0.75rem auto;
+    font-size: 32px;
+}
+

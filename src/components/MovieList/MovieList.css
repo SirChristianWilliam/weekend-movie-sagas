@@ -1,4 +1,9 @@
 .movies {
     display : flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
+
+.movie-list{
+    color: #c3073f;
+};
