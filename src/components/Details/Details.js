@@ -56,14 +56,16 @@ function Details(){
                 <h3 className="movie-title"> {activeMovie.title} </h3>
                 <img src={activeMovie.poster}></img>
                 <p className='movie-description'>{activeMovie.description}</p>
+
+                <div className='genre-list'>    
+                    {/* if movie genres true map and render all genres */}
+                    <h3 className='movie-title'>Genres:</h3>
+                    {movieGenres && movieGenres.map((genre, i) => {
+                        return <p key={i}>{genre.name}</p>
+                    })}
+                </div>
             </div>
-            <div className='genre-list'>    
-                {/* if movie genres true map and render all genres */}
-                <h3 className='movie-title'>Genres:</h3>
-                {movieGenres && movieGenres.map((genre, i) => {
-                    return <p key={i}>{genre.name}</p>
-                })}
-            </div>
+            
 
             <button onClick={goHome} class="backBtn">Back To List</button>
 
