@@ -54,7 +54,7 @@ function Details(){
 
     return(
         <article key={activeMovie.id} className="movie-detail-container">
-            <div className="movie-container">
+            <div className="movie-container-details">
                 <h3 className="movie-title"> {activeMovie.title} </h3>
                 <img src={activeMovie.poster}></img>
                 <p className='movie-description'>{activeMovie.description}</p>
