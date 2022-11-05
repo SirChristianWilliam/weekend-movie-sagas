@@ -26,6 +26,7 @@ const movies = (state = [], action) => {
     }
 }
 
+//stores the selected movie
 const activeMovie = (state={}, action) => {
     // console.log('active movie payload:', action.payload);
     //set state of active book
@@ -49,10 +50,11 @@ const genres = (state = [], action) => {
 
 
 function* fetchAllMovies() {
-    // get all movies from the DB
+    // get all movies from the DB and assign to redux
     try {
         const movies = yield axios.get('/api/movie');
         console.log('get all:', movies.data);
+        //sends response from server and DB to the redux store
         yield put({ type: 'SET_MOVIES', payload: movies.data });
 
     } catch {
@@ -68,7 +70,7 @@ function* fetchSingleMovie(action){
 
     console.log('Single move response from server is:', response.data);
 
-    //'yield put' to activeMovie
+    //'yield put' to activeMovie redux store
     yield put({
         type: 'SET_ACTIVE_MOVIE',
         payload: response.data
@@ -81,17 +83,12 @@ function* fetchSingleMovieGenres(action){
     // //get genres for the movie from genreRouter
     const response = yield axios.get(`/api/genre/${action.payload}`);
     console.log('response from server for singlemoviegenres:', response.data);
+    // send genre information to redux store
     yield put({
         type: 'SET_GENRE',
         payload: response.data
     })
 }
-
-// function* emptyStore(){
-//     yield put({
-//         type: 'EMPTY_STORE'
-//     })
-// }
 
 
 // Create the rootSaga generator function

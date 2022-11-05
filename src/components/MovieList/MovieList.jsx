@@ -9,15 +9,16 @@ function MovieList() {
     //import useHistory
     const history = useHistory();
 
-    //use dispatc and useselcotor for store of movies post dispatch below
+    //use dispatch and useselcotor for store of movies post dispatch below
     const dispatch = useDispatch();
     const movies = useSelector(store => store.movies);
 
+    //Fetches movies through saga to update redux store
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
-    //on click
+    //on click go to the movie details page
     const onSelect = (evt)=>{
         console.log('evt.target.id', evt.target.id);
 
@@ -25,7 +26,6 @@ function MovieList() {
 
         //go to details and send id with
         history.push(`/api/movie/${evt.target.id}`);
-
     }
 
     return (
@@ -34,7 +34,7 @@ function MovieList() {
             <section className="movies">
                 {movies.map(movie => {
                     return (
-
+                        // movie item passed movie object and on select fn
                         <MovieItem movie={movie} onSelect={onSelect}/>
 
                     );

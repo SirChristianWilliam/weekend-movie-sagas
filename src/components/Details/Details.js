@@ -18,8 +18,10 @@ function Details(){
 
     //get movies genres from redux
     const movieGenres = useSelector(store => store.genres);
-    // const genres = useSelector(store => store.genres);
+
+
     // console.log('params.id', params.id);
+
     useEffect(()=>{
         //send id to saga
         //get the selected movie! ⬇️
@@ -32,9 +34,11 @@ function Details(){
             type: 'FETCH_MOVIE_GENRES',
             payload: params.id,
         });
+        //set the params id here so use effect runs if params.id changes in url to fetch new movie details and genres
     }, [params.id]);
 
-    // return loading if no active movie
+
+    // return loading if no active movie exists in store
     if (!activeMovie.id){
         console.log('activeMovie', activeMovie)
         return <h1>loading...</h1>
@@ -43,12 +47,6 @@ function Details(){
     const goHome = () => {
         console.log('in goHome fn');
 
-        //empty redux store
-        // dispatch({
-        //     type: 'EMPTY_STORE',
-        // });
-
-        //go home
         history.push('/');
     };
 
