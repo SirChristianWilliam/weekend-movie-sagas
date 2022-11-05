@@ -58,6 +58,7 @@ This should show all details
 - [X] The details page should have a `Back to List` button, which should bring the user to the Home/List Page
 
 > Base functionality does not require the movie details to load correctly after refresh of the browser.
+[X] Refresh works
 
 
  > Hint : You can make a GET request for a specific movie. Remember `req.params` and `:id`?
@@ -69,8 +70,10 @@ As one of your last projects, it's possible you will be sharing this with employ
 
 - [X] Invest some time in styling it up!
 - [X] Commit your code frequently! You should have at 15+ commits on a project of this size. Use branches to help break down your features.
-- [ ] Comment your code.
-- [ ] Update this README to include a description of the project in your own words.
+- [X] Comment your code.
+- [X] Update this README to include a description of the project in your own words.
+
+
 
 ---
 

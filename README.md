@@ -4,6 +4,8 @@
 
 This project was completed over the course of three days. The information is pulled from the database to display each movie and title on the home screen. When a movie poster is clicked on it opens a details view for that movie and displays title, description, genres and a bach button. To do this I used url params and two queries. One query to get movie information and another to get genres. I map through the genres to display in a flexbox side by side.
 
+I styled using vanilla CSS because I still need practice with it. I am getting better at layouts and controlling the responsiveness of the page. I still need to practice overall designing. I am happy with how it turned out though.
+
 ### Prerequisites
 
 Link to software that is required to install the app (e.g. node).

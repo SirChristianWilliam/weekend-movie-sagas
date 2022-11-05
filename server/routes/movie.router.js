@@ -17,7 +17,8 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res)=>{
     // console.log('in movie /:id GET and id is:', req.params);
-    //set query with $1 - no johnny drop tables
+
+    //set query with $1 - no Bobby drop tables
     const queryText = `
         SELECT * FROM "movies"
         WHERE "id" = $1;
@@ -27,7 +28,7 @@ router.get('/:id', (req, res)=>{
     pool.query(queryText, [req.params.id])
         .then(result => {
             // console.log('single move after get:', result.rows);
-            //send movie back to saga as object
+            //send movie info back to saga as object
             res.send(result.rows[0]);
         })
         .catch(err=>{

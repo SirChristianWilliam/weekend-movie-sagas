@@ -6,6 +6,7 @@ router.get('/:id', (req, res) => {
 console.log('in get genres by id and id is:', req.params);
 
     //set querytext for query to DB
+    //grab array of genres at that movie's id  
     const queryText = `
             SELECT "genres"."name" FROM "movies"
             JOIN "movies_genres"
