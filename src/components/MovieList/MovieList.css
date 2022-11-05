@@ -1,4 +1,11 @@
 .movies {
     display : flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
+
+.movie-list{
+    color: #c3073f;
+    font-size: 2.5rem;
+    font-weight: bold;;
+};

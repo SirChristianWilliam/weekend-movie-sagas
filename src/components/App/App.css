@@ -3,22 +3,19 @@
 }
 
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.header{
+    color: White;
+    font-size: 3rem;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    padding-top: 1em;
+    box-shadow: 1px 10px 19px 7px #c3073f;
+    margin-top: 0;
+
 }
 
-.App-title {
-  font-size: 1.5em;
-}
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+body{
+  background-color: #1a1a1c;
+  font-family: 'Signika Negative', sans-serif;
 }

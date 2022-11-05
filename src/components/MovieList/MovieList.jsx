@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './MovieList.css'
 import { useHistory } from 'react-router-dom';
+import MovieItem from '../MovieItem/MovieItem';
+
 
 function MovieList() {
     //import useHistory
@@ -28,14 +30,13 @@ function MovieList() {
 
     return (
         <main>
-            <h1>MovieList</h1>
+            <h1 className="movie-list">MovieList</h1>
             <section className="movies">
                 {movies.map(movie => {
                     return (
-                        <div key={movie.id} >
-                            <h3 >{movie.title}</h3>
-                            <img id={movie.id} onClick={onSelect} src={movie.poster} alt={movie.title}/>
-                        </div>
+
+                        <MovieItem movie={movie} onSelect={onSelect}/>
+
                     );
                 })}
             </section>

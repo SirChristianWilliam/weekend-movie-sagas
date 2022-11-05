@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+
+import './Details.css';
 
 function Details(){
     //import useParams and dispatch
@@ -52,16 +53,19 @@ function Details(){
     };
 
     return(
-        <article key={activeMovie.id} className="movieDetailContainer">
-            <h1> {activeMovie.title} </h1>
-            <img src={activeMovie.poster}></img>
-            <p>{activeMovie.description}</p>
-            <ul>    
+        <article key={activeMovie.id} className="movie-detail-container">
+            <div className="movie-container-details">
+                <h3 className="movie-title"> {activeMovie.title} </h3>
+                <img src={activeMovie.poster}></img>
+                <p className='movie-description'>{activeMovie.description}</p>
+            </div>
+            <div className='genre-list'>    
                 {/* if movie genres true map and render all genres */}
+                <h3 className='movie-title'>Genres:</h3>
                 {movieGenres && movieGenres.map((genre, i) => {
-                    return <li key={i}>{genre.name}</li>
+                    return <p key={i}>{genre.name}</p>
                 })}
-            </ul>
+            </div>
 
             <button onClick={goHome} class="backBtn">Back To List</button>
 
